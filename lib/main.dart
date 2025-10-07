@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
 
 class MyAppState extends ChangeNotifier {
   var current = WordPair.random();
-  
+
   void getNext() {
     current = WordPair.random();
     notifyListeners();
@@ -43,7 +43,7 @@ class MyHomePage extends StatelessWidget {
       body: Column(
         children: [
           Text('A random AWESOME idea:'),
-          Text(pair.asLowerCase),
+          BigCard(pair: pair),
           ElevatedButton(
             onPressed: () {
               appState.getNext();
@@ -63,7 +63,10 @@ class BigCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Card(
+      color: theme.colorScheme.primary,
       child: Padding(
         padding: const EdgeInsets.all(20),
         child: Text(pair.asLowerCase),
