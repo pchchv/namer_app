@@ -41,6 +41,7 @@ class MyHomePage extends StatelessWidget {
 
     return Scaffold(
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text('A random AWESOME idea:'),
           BigCard(pair: pair),
@@ -72,7 +73,6 @@ class BigCard extends StatelessWidget {
       color: theme.colorScheme.primary,
       child: Padding(
         padding: const EdgeInsets.all(20),
-
         child: Text(
           pair.asLowerCase,
           style: style,
